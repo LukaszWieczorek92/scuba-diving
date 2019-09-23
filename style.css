@@ -1,0 +1,478 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: -50px;
+  left: -100px;
+}
+
+.textbox {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  width: 600px;
+  height: 350px;
+  /* background: red; */
+  text-align: left;
+  padding: 5px;
+  color: white;
+}
+
+.textbox h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.textbox h2 {
+  margin-bottom: 30px;
+  color: lightgrey;
+}
+
+.btn {
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+  font-family: "pappins", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: none;
+  transition: 0.5s;
+  position: relative;
+  cursor: pointer;
+  z-index: 0;
+  color: black;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  left: 0;
+  top: 0;
+  background-color: yellow;
+  border-radius: 5px;
+  border: none;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  color: white;
+  background-color: blue;
+}
+
+.btn::before {
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  height: 100px;
+}
+
+.btn:hover::before {
+  height: 0px;
+}
+
+/* logo */
+
+.logo {
+  width: 200px;
+  height: 100px;
+  font-family: "pacifico", sans-serif;
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+}
+
+/* dotsy */
+
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: white; */
+}
+
+.dots span {
+  display: inline-block;
+  background-color: blue;
+  width: 15px;
+  height: 15px;
+  margin: 0 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots span.active {
+  box-shadow: 0 0 5px 5px yellow;
+}
+
+.next,
+.back {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.22);
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 0 50% 50% 0;
+}
+
+.next {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 50% 0 0 50%;
+}
+
+.next:hover,
+.back:hover {
+  color: yellow;
+}
+
+/* nav desktop */
+
+nav {
+  position: absolute;
+  top: 100px;
+  left: 10vw;
+  width: 80vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0 80px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: yellow;
+}
+
+/* section destinations */
+
+.destinations {
+  height: 100vh;
+}
+
+.destinations h1 {
+  text-align: center;
+  margin: 30px;
+  font-size: 3rem;
+}
+
+.destinations .cardbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+}
+
+.destinations .card {
+  width: 30%;
+  height: 70vh;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.destinations .card:hover {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.card .photo {
+  width: 90%;
+  height: 50%;
+  border: 10px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.destinations .card:hover .photo {
+  border: 0px solid white;
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.15);
+}
+
+.photo img {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card h3 {
+  margin: 20px;
+  color: #bababa;
+}
+
+.card button {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  position: relative;
+  transition: 0.2s;
+  border-radius: 3px;
+  color: #bababa;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #bababa;
+}
+
+.card:hover button {
+  box-shadow: 0 0 0 2px blue;
+  width: 120px;
+  color: blue;
+}
+
+.card:hover button::before {
+  display: none;
+}
+
+.card button:hover {
+  color: black;
+  box-shadow: 0 0 0 2px black;
+}
+
+/* section diver */
+
+.diver {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #eff2f7;
+  padding: 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 1 0 25%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.diver img {
+  position: absolute;
+  min-width: 5%;
+  min-height: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.first,
+.second,
+.third,
+.four {
+  width: 35%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 1px solid black; */
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.first,
+.second {
+  height: 50vh;
+
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 65% 30% 10% 30%;
+  background-color: yellow;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  z-index: 2;
+}
+
+.diver h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.diver h3:hover {
+  color: blue;
+}
+
+/* sekcja parallax */
+
+.parallax {
+  width: 100%;
+  height: 60vh;
+  background-image: url(img/jellyfish.jpg);
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.counter {
+  width: 25vw;
+  height: 30vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.counter h1 {
+  font-size: 6rem;
+}
+/* sekcja accordian */
+.accordian {
+  max-width: 80%;
+
+  background-color: white;
+  margin: 50px auto;
+}
+.accordian h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+button.question {
+  width: 100%;
+  line-height: 80px;
+  background-color: white;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  border-bottom: 2px solid whitesmoke;
+}
+
+.accordian .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+.accordian .content p {
+  padding: 40px;
+  font-size: 1.5rem;
+}
+
+button.question::before {
+  content: "\f054";
+  font-family: "fontawesome";
+  display: inline-block;
+  text-align: center;
+  width: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+  font-size: 2rem;
+  margin-right: 50px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.2s;
+  color: #0e78dc;
+}
+
+button.question:hover::before {
+  transform: rotate(90deg);
+}
+
+button.question.open::before {
+  transform: rotate(-90deg);
+}
+
+.nastepna {
+  background-color: red;
+}
+
+.gallery {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.item img {
+  position: static;
+  width: 100%;
+  height: auto;
+  display: block;
+}
