@@ -326,6 +326,7 @@ nav ul li a:hover {
 
 .destinations {
   height: 100vh;
+
 }
 
 .destinations h1 {
@@ -735,18 +736,18 @@ button.question.open::before {
 }
 
 
-.belt {
+/* .belt {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   color: white;
   top: 100px;
 
-}
+} */
 
-.belt.fixed-header {
+/* .belt.fixed-header {
   position: fixed;
   top: 0;
   background-color: black;
 
-}
+} */
