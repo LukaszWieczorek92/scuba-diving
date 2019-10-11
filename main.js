@@ -182,3 +182,18 @@ for (let i = 0; i < accordions.length; i++) {
 
     });
 }
+
+
+
+
+// ////////////////////////////sticky nav
+
+$(window).scroll(() => {
+    if ($(window).scrollTop() >= 100) {
+        $('.belt').addClass('fixed-header');
+
+    } else {
+        $('.belt').removeClass('fixed-header');
+
+    }
+})
