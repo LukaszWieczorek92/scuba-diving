@@ -6,7 +6,7 @@
 }
 
 body {
-  overflow-x hidden;
+  overflow-x: hidden;
 }
 
 header {
@@ -319,6 +319,33 @@ nav ul li a:hover {
 
   nav {
     display: none;
+  }
+
+  header {
+    padding: 0 40px;
+  }
+
+  .textbox {
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    font-size: 0.7rem;
+    top: 30%;
+  }
+
+  .textbox h1 {
+    font-size: 2rem;
+  }
+
+  .textbox h2 {
+    margin-bottom: 35px;
+  }
+
+  .dots span {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
   }
 }
 
