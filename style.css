@@ -6,7 +6,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x hidden;
 }
 
 header {
@@ -507,6 +507,7 @@ nav ul li a:hover {
   background-size: cover;
   color: white;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .overlay {
@@ -536,7 +537,7 @@ nav ul li a:hover {
 .accordian {
   max-width: 80%;
 
-  background-color: white;
+
   margin: 50px auto;
 }
 
