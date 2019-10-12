@@ -1,6 +1,5 @@
 // slider
 
-
 // trzy rodzaje zdjęc i tekstów
 const slideList = [{
         img: "img/img1.jpg",
@@ -19,9 +18,9 @@ const slideList = [{
     }
 ];
 // pobranie wszystkich elementów
-const image = document.querySelector('img.slider');
-const h1 = document.querySelector('h1.slider');
-const h2 = document.querySelector('h2.slider');
+const image = document.querySelector("img.slider");
+const h1 = document.querySelector("h1.slider");
+const h2 = document.querySelector("h2.slider");
 const next = document.querySelector(".next");
 const back = document.querySelector(".back");
 
@@ -32,10 +31,10 @@ const time = 2500;
 let active = 0;
 
 const changeDot = () => {
-    const activeDot = dots.findIndex((e) => e.classList.contains("active"));
+    const activeDot = dots.findIndex(e => e.classList.contains("active"));
     dots[activeDot].classList.remove("active");
     dots[active].classList.add("active");
-}
+};
 
 const changeSlide = () => {
     active++;
@@ -46,9 +45,7 @@ const changeSlide = () => {
     h1.textContent = slideList[active].txt1;
     h2.textContent = slideList[active].txt2;
     changeDot();
-
-}
-
+};
 
 let timer = setInterval(changeSlide, time);
 
@@ -63,8 +60,7 @@ const changePage = () => {
     h2.textContent = slideList[active].txt2;
     changeDot();
     timer = setInterval(changeSlide, time);
-
-}
+};
 const changePageBack = () => {
     clearInterval(timer);
     active--;
@@ -77,30 +73,25 @@ const changePageBack = () => {
     h2.textContent = slideList[active].txt2;
     changeDot();
     timer = setInterval(changeSlide, time);
-
-
-
-}
-
+};
 
 next.addEventListener("click", changePage);
 back.addEventListener("click", changePageBack);
 
-
 // zmiana slajdu po kliknięciu w kropkę..
-dots.forEach((dot, i) => dot.addEventListener("click", function () {
-    clearInterval(timer);
-    dots.forEach((e) => e.classList.remove("active"));
-    dot.classList.add("active");
-    image.src = slideList[i].img;
-    h1.textContent = slideList[i].txt1;
-    h2.textContent = slideList[i].txt2;
-    timer = setInterval(changeSlide, time);
-}))
-
+dots.forEach((dot, i) =>
+    dot.addEventListener("click", function () {
+        clearInterval(timer);
+        dots.forEach(e => e.classList.remove("active"));
+        dot.classList.add("active");
+        image.src = slideList[i].img;
+        h1.textContent = slideList[i].txt1;
+        h2.textContent = slideList[i].txt2;
+        timer = setInterval(changeSlide, time);
+    })
+);
 
 // stats counter  ??????
-
 
 let counterDone = false;
 
@@ -110,24 +101,14 @@ $(document).on("scroll", function () {
     const parallaxfromTop = parallax.offset().top;
     const parallaxHeight = parallax.outerHeight();
 
-
-
-
-
-
     if (scrollValue > parallaxfromTop - parallaxHeight && counterDone === false) {
-
-
-
         const h1 = [...document.querySelectorAll(".counter h1")];
 
         let counter = 0;
 
         const grow = () => {
-
             counter++;
-            h1.forEach((index) => {
-
+            h1.forEach(index => {
                 index.textContent = counter;
 
                 if (counter === 120) {
@@ -139,37 +120,19 @@ $(document).on("scroll", function () {
                 } else if (counter === 320) {
                     h1[3] = 320;
                 }
-
-
-
-
-
-
-            })
-
-
-
+            });
         };
 
         const timer = setInterval(grow, 0.1);
         counterDone = true;
-
-
-
-
     }
-
-
-
 });
-
 
 // accordian
 
 const accordions = document.getElementsByClassName("question");
 
 for (let i = 0; i < accordions.length; i++) {
-
     accordions[i].addEventListener("click", function () {
         this.classList.toggle("open");
         const content = this.nextElementSibling;
@@ -179,21 +142,18 @@ for (let i = 0; i < accordions.length; i++) {
         } else {
             content.style.maxHeight = content.scrollHeight + "px";
         }
-
     });
 }
 
+const link = document.querySelectorAll(".mobile");
+const cover = document.querySelector(".menu > div");
+const burger = document.querySelector(".hamburger");
 
-
-
-// ////////////////////////////sticky nav
-
-$(window).scroll(() => {
-    if ($(window).scrollTop() >= 100) {
-        $('.belt').addClass('fixed-header');
-
-    } else {
-        $('.belt').removeClass('fixed-header');
-
-    }
+burger.addEventListener("click", () => {
+    burger.classList.toggle("rotate");
 })
+
+
+link.forEach((i) => i.addEventListener("click", () => {
+    burger.classList.toggle("rotate");
+}))

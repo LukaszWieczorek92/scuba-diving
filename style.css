@@ -773,16 +773,6 @@ button.question.open::before {
   z-index: 2;
 }
 
-.toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60px;
-  height: 60px;
-  z-index: 3;
-  opacity: 0;
-  cursor: pointer;
-}
 
 .hamburger {
   position: absolute;
@@ -824,30 +814,29 @@ button.question.open::before {
   top: 10px;
 }
 
-.toggler:checked+.hamburger>div {
+.hamburger.rotate>div {
   transform: rotate(135deg);
 }
 
-/* .toggler:checked:hover+.hamburger>div {
-  transform: rotate(225deg);
-} */
 
-.toggler:checked+.hamburger>div:after,
-.toggler:checked+.hamburger>div:before {
+
+.hamburger.rotate>div:after,
+.hamburger.rotate>div:before {
   transform: rotate(90deg);
   top: 0;
 }
 
 
-.toggler:checked~.menu {
+.hamburger.rotate~.menu {
   visibility: visible;
+
 }
 
-.toggler:checked~.menu>div {
+.hamburger.rotate~.menu>div {
   transform: scale(1);
 }
 
-.toggler:checked~.menu>div>div {
+.hamburger.rotate~.menu>div>div {
   opacity: 1;
 }
 
@@ -858,7 +847,7 @@ button.question.open::before {
   width: 100vw;
   height: 100vh;
   visibility: hidden;
-  transition: opacity .6s;
+  transition: opacity .5s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -869,9 +858,7 @@ button.question.open::before {
   width: 150vw;
   height: 150vh;
   border-radius: 50%;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+
   background-color: rgba(0, 0, 0, 0.9);
   transform: scale(0);
   transition: all .6s;
@@ -889,7 +876,7 @@ button.question.open::before {
   align-items: center;
   text-align: center;
   opacity: 0;
-  transition: opacity .6s;
+  transition: opacity 2s;
 }
 
 .menu>div>div>ul>li {
@@ -905,11 +892,15 @@ button.question.open::before {
   color: white;
   display: inline-block;
   transition: .3s;
+  text-transform: uppercase;
 }
 
 .menu>div>div>ul>li>a:hover {
   color: yellow;
 }
+
+
+
 
 @media(min-width:620px) {
   .menu-container {
