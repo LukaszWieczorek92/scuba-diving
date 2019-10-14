@@ -64,6 +64,11 @@ img {
   overflow: hidden;
 }
 
+.btn:focus {
+  outline: none;
+  border: none;
+}
+
 .btn::before {
   content: "";
   position: absolute;
@@ -202,7 +207,8 @@ nav ul li a:hover {
 
 @media (max-width: 1024px) {
   .logo {
-    font-size: 4rem;
+    font-size: 6rem;
+    top: 40px;
   }
 
   .textbox {
@@ -237,6 +243,16 @@ nav ul li a:hover {
     height: 80px;
 
     line-height: 80px;
+  }
+
+  nav {
+    padding: 0;
+    top: 200px;
+  }
+
+  nav ul li a {
+    font-size: 2rem;
+
   }
 }
 
@@ -352,7 +368,7 @@ nav ul li a:hover {
 /* section destinations */
 
 .destinations {
-  height: 100vh;
+  /* height: 100vh; */
 
 }
 
@@ -451,6 +467,60 @@ nav ul li a:hover {
   color: black;
   box-shadow: 0 0 0 2px black;
 }
+
+/* ////////////////////////////////////////////media queries- destination section ////////////////////// */
+
+@media(max-width:1024px) {
+  .destinations {
+    height: 60%;
+  }
+
+  .destinations .cardbox {
+    padding: 20px 20px;
+    flex-shrink: 0;
+  }
+
+  .destinations .card {
+    width: 33%;
+    /* height: 50vh; */
+    transition: 0.2s;
+    text-align: center;
+  }
+}
+
+@media(max-width:680px) {
+  .destinations .cardbox {
+    padding: 20px 60px;
+    flex-direction: column;
+    width: 100vw;
+    /* justify-content: center;
+    align-items: center; */
+  }
+
+  .destinations .card {
+    width: 100%;
+    /* margin: 20px; */
+
+    align-content: center;
+  }
+
+  .card .photo {
+    height: 50%;
+
+  }
+
+
+
+}
+
+@media(max-width:480px) {
+  .destinations .cardbox {
+    padding: 10px;
+  }
+}
+
+
+
 
 /* section diver */
 
