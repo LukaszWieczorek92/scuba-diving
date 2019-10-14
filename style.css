@@ -823,8 +823,15 @@ button.question.open::before {
 }
 
 @media(max-width:560px) {
+  .accordian h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+
   .accordian {
     max-width: 95%;
+    margin: 20px auto;
+
   }
 
   button.question {
