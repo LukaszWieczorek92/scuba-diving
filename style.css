@@ -593,6 +593,70 @@ nav ul li a:hover {
   color: blue;
 }
 
+@media(max-width:1024px) {
+  .diver {
+    position: static;
+    height: 100%;
+  }
+
+  .diver>img {
+    display: none;
+  }
+
+  .diver aside {
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-around; */
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+
+  .diver h3 {
+    font-size: 2.5rem;
+  }
+
+  .diver p {
+    font-size: 1.2rem;
+  }
+}
+
+@media(max-width:820px) {
+  .diver h3 {
+    font-size: 1.5rem;
+  }
+
+  .diver {
+    padding: 20px;
+  }
+}
+
+@media(max-width:620px) {
+  .diver aside {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    height: 30%;
+    padding: 20px;
+  }
+
+  @media(max-width:480px) {
+    .circle {
+      width: 100px;
+      height: 100px;
+    }
+
+  }
+
+}
+
 /* sekcja parallax */
 
 .parallax {
