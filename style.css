@@ -867,7 +867,7 @@ button.question.open::before {
 
 /* gallery section */
 .gallery {
-  padding: 100px;
+  padding: 0 100px;
 }
 
 

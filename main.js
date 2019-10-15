@@ -157,3 +157,20 @@ burger.addEventListener("click", () => {
 link.forEach((i) => i.addEventListener("click", () => {
     burger.classList.toggle("rotate");
 }))
+
+
+
+
+$("nav a").on("click", function () {
+    const goToSection = $(this).attr("href");
+    $("body,html").animate({
+        scrollTop: $(goToSection).offset().top
+    }, 500)
+})
+
+$("div a").on("click", function () {
+    const goToSection = $(this).attr("href");
+    $("body,html").animate({
+        scrollTop: $(goToSection).offset().top
+    }, 500)
+})
