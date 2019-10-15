@@ -174,3 +174,10 @@ $("div a").on("click", function () {
         scrollTop: $(goToSection).offset().top
     }, 500)
 })
+
+
+$(".btn").on("click", () => {
+    $("html,body").animate({
+        scrollTop: $(".destinations").offset().top
+    }, 500);
+});
